@@ -1,0 +1,12 @@
+name: Code Quality Checker
+on: [pull_request]
+jobs:
+  run:
+    name: Code quality check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v2
+      
+    - name: wemake-python-styleguide
+      uses: wemake-services/wemake-python-styleguide@0.18.0
