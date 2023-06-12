@@ -1,5 +1,5 @@
 name: Typo Checking Action
-on: [push]
+on: [pull_request, push]
 
 jobs:
   run:
