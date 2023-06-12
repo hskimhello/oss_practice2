@@ -9,7 +9,12 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v2
       
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v36
+    
     - name: Check spelling of all files
       uses: crate-ci/typos@master
       with: 
-        files: ./*.md
+        files: ${{ steps.changed-files.outputs.all_changed_files }}
+
